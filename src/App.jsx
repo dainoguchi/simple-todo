@@ -1,34 +1,54 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { Box, Typography, Container } from "@mui/material";
+import TodoList from "./components/TodoList";
+import Home from "./pages/Home";
+import Grid from "@mui/material/Grid";
+import * as React from "react";
+import Button from "@mui/material/Button";
+import Popover from "@mui/material/Popover";
+import PopupState, { bindTrigger, bindPopover } from "material-ui-popup-state";
+import PopupButton from "./components/PopupButton";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <div>
+      <Box sx={{ flexGrow: 1 }}>
+        <Container maxWidth="md">
+          <Typography variant="h1" component="h2" color="red" bgcolor="red">
+            h1. Heading
+          </Typography>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+              alignItems: "center",
+              width: "100%",
+              padding: "1rem",
+            }}
+          >
+            <Box sx={{}}>
+              <Typography variant="h3">Hello World</Typography>
+            </Box>
+          </Box>
+          <PopupButton></PopupButton>
+          <Grid container alignItems="center" justify="center">
+            <Grid item xs={8} bgcolor="blue">
+              d
+            </Grid>
+            <Grid item xs={5}>
+              d
+            </Grid>
+            <Grid item xs={4}>
+              d
+            </Grid>
+            <Grid item xs={8}>
+              d
+            </Grid>
+          </Grid>
+        </Container>
+      </Box>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
